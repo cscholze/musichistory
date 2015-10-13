@@ -35,14 +35,10 @@ nav > p {
 	display: flex;
 	flex-wrap: wrap;
 }
-.file-content {
+.song-list {
 	background-color: #fefac0;
 	color: #785616;
 	flex-grow: 4;
-}
-.file-content > p {
-	display: inline;
-	margin: 0 0.3em;
 }
 
 /* styleistic classes */
