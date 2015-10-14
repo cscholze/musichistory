@@ -7,13 +7,26 @@
 
 <body>
 	<!-- Top nav bar -->
-	<nav class="navbar bordered">
-		<a href="#">View music</a>
-		<p> | </p>
-		<a href="#">Add Music</a>
-		<p> | </p>
-		<a href="#">Profile</a>
-	</nav>
+	<header class="navigation">
+		<nav class="navbar">
+			<a href="#">View music</a>
+			<p> | </p>
+			<a href="#">Add Music</a>
+			<p> | </p>
+			<a href="#">Profile</a>
+		</nav>
+	</header>
+	<!-- invisible navbar spacer -->
+	<header class="navigation invisible">
+		<nav class="navbar">
+			<a href="#">View music</a>
+			<p> | </p>
+			<a href="#">Add Music</a>
+			<p> | </p>
+			<a href="#">Profile</a>
+		</nav>
+	</header>
+
 
 	<div class="body-content">
 	<!-- sidebar -->
@@ -65,10 +78,12 @@
 		</div>
 
 	<!-- songlist -->
-		<div class="song-list bordered" id="playlist">
-		</div>
+		<footer class="song-list bordered" id="playlist">
+		</footer>
 	</div>
 
+	<!-- extra space for scrolling/fixed navbar testing -->
+	<div class="space"></div>
 	<!-- Javascripts -->
 	<script src="musichistory.js"></script>
 </body>
