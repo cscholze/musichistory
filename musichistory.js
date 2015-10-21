@@ -1,73 +1,100 @@
-/*
-	Use JavaScript arrays, loops, and innerHTML to show the music you love.
+console.log("linking 'musicthistory.js' ... SUCCESS")
+/***************************************************************************************************************/
+/* Navigation */
+// Get navigation button and tab elements
+var viewMusicTabBtn = document.getElementById("view-music-tab-btn");
+console.log("viewMusicTabBtn",viewMusicTabBtn);
+var viewMusicTab = document.getElementsByClassName("view-music-tab")[0];
 
-	Students must use JavaScript to create a list of songs in the index.html 
-	file for their Music History project. Have them download the songs.js file, 
-	which contains an array of strings with song information.
 
-	Each student must add one song to the beginning and the end of the array.
-	Loop over the array and remove any words or characters that obviously don't belong.
-	Students must find and replace the > character in each item with a - character.
-	Must add each string to the DOM in index.html in the main content area.
+var addMusicTabBtn = document.getElementById("add-music-tab-btn");
+var addMusicTab = document.getElementsByClassName("add-music-tab")[0];
 
-	{Song name} by {Artist} on the album {Album}
+var profileTabBtn = document.getElementById("profile-tab-btn");
+var profileTab = document.getElementsByClassName("profile-tab")[0];
 
+// BEGIN viewMusicTab
+viewMusicTabBtn.addEventListener("click",dispViewMusic);
+function dispViewMusic(event) {
+  viewMusicTab.classList.remove("hidden");
+  addMusicTab.classList.add("hidden");
+  profileTab.classList.add("hidden");
+}
+// END viewMusicTab
+
+// BEGIN viewMusicTab
+addMusicTabBtn.addEventListener("click",dispAddMusic);
+function dispAddMusic(event) {
+  viewMusicTab.classList.add("hidden");
+  addMusicTab.classList.remove("hidden");
+  profileTab.classList.add("hidden");
+}
+// END viewMusicTab
+
+// BEGIN viewProfileTab
+profileTabBtn.addEventListener("click",dispProfile);
+function dispProfile(event) {
+  viewMusicTab.classList.add("hidden");
+  addMusicTab.classList.add("hidden");
+  profileTab.classList.remove("hidden");
+}
+// END viewMusicTab
+
+/***************************************************************************************************************/
+/* VIEW MUSIC page */
+var addNewSongBtn = document.getElementsByClassName("add-new-song-btn")[0];
+console.log(addNewSongBtn);
+addNewSongBtn.addEventListener("click",dispAddMusic);
+
+
+/***************************************************************************************************************/
+/* ADD-MUSIC page */
+/* ADVANCED FEATURE Enable/disable addSong button if all fields are completed
+if (songName !== "" && artistName !== "" && albumName !== "" && songGenre !== "default") {
+  addSongBtn.disabled="false";
+}
 */
 
-var songs = [];
+// Add new song to DOM when user clicks "add-song" button element
+// Grab add-song Button
+var addSongBtn = document.getElementsByClassName("add-song-btn")[0];
 
-songs[songs.length] = "Legs > by Z*Z Top on the album Eliminator";
-songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
-songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall";
-songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
-console.log(songs);
+//assign click event listener
+addSongBtn.addEventListener("click",addSong);
 
+//BEGIN addSong: define click handler function to add song info to DOM
+function addSong(event) {
+    console.log("addSong called");
 
-// Add song to beginning of 'songs' array
-// {Song name} by {Artist} on the album {Album}
-songs.unshift("Faith > by Limp Bizkit on the album Three Dolla Bill Y'all");
-console.log(songs);
+  // Grab user values from input fields
+  var songName = document.querySelector("input[name='song-title']").value;
+    if (songName ==="") {alert("Please enter a song name!");}
+  var artistName = document.querySelector("input[name='artist']").value;
+    if (artistName ==="") {alert("Please enter an artist name!");}
+  var albumName = document.querySelector("input[name='album']").value;
+    if (albumName ==="") {alert("Please enter the album name!");}
+  var songGenre = document.querySelector("select[name='genre']").value;
+    if (songGenre ==="default") {alert("Please select a genre!");}
 
-// Add song to end of array 'songs'
-// {Song name} by {Artist} on the album {Album}
-songs.push("Don't Take The Girl > by Tim McGraw on the album Not A Moment Too Soon");
-console.log(songs);
+  // Get song-list element to add songs to
+  if (songName !== "" && artistName !== "" && albumName !== "" && songGenre !== "default") {
+    // get song list DOM container
+    var songList = document.getElementsByClassName("song-list")[0];
+    // Divider displayed between song info
+    var divider = "  |  ";
+    // Print values to DOM
+    songList.innerHTML = songName + divider + artistName + divider + albumName + divider +songGenre;
 
-// Remove unneeded characters and replace '>' with '-'
-console.log("removing special characters and replacing '>'")
-for (var i = 0; i < songs.length; i++) {
-	songs[i] = songs[i].replace(/[\/\\#,+()$~%.'":*?@<{}]/g,'');
-	songs[i] = songs[i].replace(/>/g, "-");
-	console.log(songs[i]);
+    // Reset input fields
+    document.querySelector("input[name='song-title']").value = "";
+    document.querySelector("input[name='artist']").value = "";
+    document.querySelector("input[name='album']").value = "";
+    document.querySelector("select[name='genre']").selectedIndex = "0";
 
-	// Populate playlist with song
-	var songElement = "<p>"+songs[i]+"</p>";
-	console.log("song element",songElement);
-	document.getElementById("playlist").innerHTML += songElement;
-}
-
-
-/* Get elements Method 
-function getElementsByClassName(node,classname) {
-  if (node.getElementsByClassName) { // use native implementation if available
-    return node.getElementsByClassName(classname);
-  } else {
-    return (function getElementsByClass(searchClass,node) {
-        if ( node == null )
-          node = document;
-        var classElements = [],
-            els = node.getElementsByTagName("*"),
-            elsLen = els.length,
-            pattern = new RegExp("(^|\\s)"+searchClass+"(\\s|$)"), i, j;
-
-        for (i = 0, j = 0; i < elsLen; i++) {
-          if ( pattern.test(els[i].className) ) {
-              classElements[j] = els[i];
-              j++;
-          }
-        }
-        return classElements;
-    })(classname, node);
+    //Go back to song list
+    dispViewMusic();
   }
-}
-*/
+} // END addSong
+
+/***************************************************************************************************************/
+/* PROFILE page */

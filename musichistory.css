@@ -1,0 +1,32 @@
+body {
+	font-family: sans-serif;
+	background-image: url("http://www.vectortiles.com/wp-content/uploads/diamond-plate-metal-background-07.jpg");
+	background-size: 500px 500px;
+	background-repeat: repeat;
+	height: 1000px;
+}
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	padding: 1em;
+	text-align: center;
+	background-color: black;
+}
+.navbar button {
+	border: none;
+	background-color: inherit;
+	color: white;
+	margin: auto 2em;
+	text-decoration: none;
+	font-size: 1.3em;
+}
+.invisible {
+	position: static;
+	visibility: hidden;
+}
+.hidden {
+	display: none;
+}
