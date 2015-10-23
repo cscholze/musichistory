@@ -10,14 +10,13 @@
 </head>
 
 <body>
-
 <div class="site-wrapper">
 
 <!-- Top nav bar -->
 	<nav class="navbar">
-		<button id="view-music-tab-btn">View music</button>
-		<button id="add-music-tab-btn">Add Music</button>
-		<button id="profile-tab-btn">Profile</button>
+		<button class="view-music-tab-btn">View music</button>
+		<button class="add-music-tab-btn">Add Music</button>
+		<button class="profile-tab-btn">Profile</button>
 	</nav>		
 
 <!-- invisible navbar spacer -->
@@ -76,10 +75,10 @@
 
 		<!-- filter button
 		<p><button type="button" onclick="alert('Filtering results')">Filter</button></p>
-
 -->
 	</div>
-<!---------------------------------------------------------------------->
+
+
 <!-- ADD MUSIC TAB -->
 	<div class="add-music-tab hidden">
 		<h1>Add new music</h1>
@@ -131,13 +130,14 @@
 	</div>	
 
 
-<!---------------------------------------------------------------------->
 <!-- PROFILE TAB -->
 	<div class="profile-tab hidden">
 		<h1>User Profile</h1>
 		<button>LOGIN</button>
 		<button>Create New User</button>
 	</div>
+</div> <!-- END .site-wrapper -->
+
 <!-- Firebase API -->
 	<script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
 <!-- JQuery API -->
@@ -145,8 +145,12 @@
 <!-- site scripts 
 	<script src="ajax.js"></script>
 -->
-	<script src="musichistory.js"></script>
-
-</div>
+	<script src="js/musichistory.js"></script>
+	<script src="js/dispViewMusic.js"></script>
+	<script src="js/dispAddMusic.js"></script>
+	<script src="js/dispProfile.js"></script>
+	<script src="js/refreshLibrary.js"></script>
+	<script src="js/storeNewSong.js"></script>
+	<script src="js/resetSongInput.js"></script>
 </body>
 </html>

@@ -35,8 +35,5 @@ body {
 .hidden {
 	display: none;
 }
-.filter {
-}
-.view-music-tab {
-	margin: 0 auto;
+.view-music-tab li{
 }
