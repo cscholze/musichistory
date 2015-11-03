@@ -13,7 +13,7 @@ function storeNewSong(library,songName, artistName, albumName, songGenre) {
               artist: artistName,
               album: albumName,
               genre: songGenre
-              }
+              };
 
             // Push JSON song object to firebase
             library.push(newSong);

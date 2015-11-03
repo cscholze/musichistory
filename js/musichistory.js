@@ -1,31 +1,28 @@
-console.log("linking 'musicthistory.js' ... SUCCESS");
 //REFACTOR FOR JQUERY
 //$(document).ready(fucntion() {
 
 /***************************************************************************************************************/
 
 // Get reference to library in firebase
-var jcsMusicHistoryRef= new Firebase("https://jcs-musichistory.firebaseio.com");
-console.log(jcsMusicHistoryRef.toString());
-var libraryRef = jcsMusicHistory
+var libraryRef= new Firebase("https://jcs-musichistory.firebaseio.com/library");
+console.log(libraryRef.toString());
 
 // Get snapshot of songlist on load "value" event
-libraryRef.once("value", function(library) {
-  console.log("library.val(): ",library.val());
-  console.log("library.key()",library.key());
-  console.log("library.toString()",library.toString());
+libraryRef.once("value", function(librarySnapshot) {
+  library = librarySnapshot.val();
+
 
 // Get each song
 var songs=[];
   for ( var song in library) {
-    songs.push(UID);
-    console.log(songs);
+    console.log(library[song]);
+    songs.push(song);
   }
-varfunction (errorObject) {
-  console.log("The read failed: " + errorObject.code);
+//   // read error handler
+// function (errorObject) {
+//   console.log("The read failed: " + errorObject.code);
+// }
 });
-
-
 
 // Get elements from Firebase object
 // for (var UID in libraryRef.val()) {
@@ -50,11 +47,11 @@ varfunction (errorObject) {
 
 /* Navigation */
 // Get navigation button and tab elements
-var viewMusicTabBtn = document.getElementById("view-music-tab-btn");
+var viewMusicTabBtn = document.getElementsByClassName("view-music-tab-btn")[0];
 var viewMusicTab = document.getElementsByClassName("view-music-tab")[0];
-var addMusicTabBtn = document.getElementById("add-music-tab-btn");
+var addMusicTabBtn = document.getElementsByClassName("add-music-tab-btn")[0];
 var addMusicTab = document.getElementsByClassName("add-music-tab")[0];
-var profileTabBtn = document.getElementById("profile-tab-btn");
+var profileTabBtn = document.getElementsByClassName("profile-tab-btn")[0];
 var profileTab = document.getElementsByClassName("profile-tab")[0];
 
 // BEGIN viewMusicTab
@@ -129,11 +126,11 @@ function addSong(event) {
       artist: artistName,
       album: albumName,
       genre: songGenre,
-    }
+    };
     console.log("newSong: ",newSong);
 
     // Push song JSON object to firebase
-    library.push(newSong);
+    libraryRef.push(newSong);
 
 
     // Reset input fields

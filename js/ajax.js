@@ -10,8 +10,8 @@
         console.log(library);
 
       var songs = library.songs;
-      for (song in songs) {
-        var song = songs[song];
+      for (var songIndex in songs) {
+        var song = songs[songIndex];
         console.log(song);
         var songName = song.title;
         var songArtist = song.artist;

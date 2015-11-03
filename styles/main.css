@@ -1,5 +1,6 @@
 /* VERSION 6 STYLING w/ BOOTSTRAP */
-body { padding-top: 70px; }
+body {
+  padding-top: 70px; }
 
 /*
 body {
@@ -44,3 +45,5 @@ body {
 .view-music-tab li{
 }
 */
+
+/*# sourceMappingURL=main.css.map */

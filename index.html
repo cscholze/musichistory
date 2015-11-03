@@ -1,30 +1,56 @@
-
 <!doctype html>
-
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta lang="en-us">
-	<link rel="stylesheet" type="text/css" href="musichistory.css">
+
+	<!-- BOOTSTRAP STYLES -->
+	<link rel="stylesheet" type="text/css" href="./lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<!-- LOCAL STYLES -->
+	<link rel="stylesheet" type="text/css" href="./styles/main.css">
 	<title>Music History</title>
+
+
 </head>
 
 <body>
-<div class="site-wrapper">
+<div class="well">
 
 <!-- Top nav bar -->
-	<nav class="navbar">
-		<button class="view-music-tab-btn">View music</button>
-		<button class="add-music-tab-btn">Add Music</button>
-		<button class="profile-tab-btn">Profile</button>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><img src="https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.lyngsat-logo.com%2Fhires%2Fpp%2Fphoenix_us.png&f=1" alt="Phoenix logo" width="30" height="30"></a>
+    			</div> <!-- END NAVBAR HEADER>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="profile-tab-btn"><a href="#">Profile</a></li>
+					<li class="active view-music-tab-btn"><a href="#">View Music<span class="sr-only">(current)</span></a></li>
+					<li class="add-music-tab-btn"><a href="#">Add Music</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Login</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div> <!-- END CONTAINER -->
 	</nav>		
 
-<!-- invisible navbar spacer -->
+<!-- invisible navbar spacer 
 	<nav class="navbar invisible">
 		<button>View music</button>
 		<button>Add Music</button>
 		<button>Profile</button>
 	</nav>
+-->
 
 
 <!-- VIEW MUSIC TAB -->
@@ -138,10 +164,12 @@
 	</div>
 </div> <!-- END .site-wrapper -->
 
-<!-- Firebase API -->
+<!-- FIREBASE API -->
 	<script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
-<!-- JQuery API -->
+<!-- JQUERY API -->
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- BOOTSTRAP -->
+	<script src="./lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- site scripts 
 	<script src="ajax.js"></script>
 -->

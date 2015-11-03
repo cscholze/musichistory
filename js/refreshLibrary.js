@@ -4,8 +4,8 @@ libraryRef.on("value", function(library) {
   var songs = library.val();
   // reset songlist on initial load
   $(".song-list").html("");
-  for (song in songs) {
-        var song = songs[song];
+  for (var songIndex in songs) {
+        var song = songs[songIndex];
         var songName = song.name;
         var songArtist = song.artist;
         var songAlbum = song.album;
