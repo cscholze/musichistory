@@ -1,48 +1,40 @@
 /* VERSION 6 STYLING w/ BOOTSTRAP */
 body {
 	padding-top: 70px; 
+	background: -webkit-linear-gradient(white, black); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(white, black); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(white, black); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(white, black); /* Standard syntax */
+	background-repeat: no-repeat;
 }
-
-/*
-body {
-	font-family: sans-serif;
-	background-image: url("http://www.vectortiles.com/wp-content/uploads/diamond-plate-metal-background-07.jpg");
-	background-size: 100px 100px;
-	background-repeat: repeat;
+filter {
+	width: 80px;
 }
-.navbar {
-	position: fixed;
-	top: 0;
-	left: 0;
+.main {
+	color: #ddd;
+}
+table {
 	width: 100%;
-	padding: 10px;
-	height: auto;
-	text-align: center;
+}
+.checkboxes-left {
+	float: left;
+	margin-left: 10px;
+	margin-right: 20px;
+}
+.checkboxes-right {
+	float: left;
+}
+.view-music-tab, .profile-tab{
 	background-color: black;
+	padding: 10px;
+	border-radius: 5px;
 }
-.navbar button {
-	border: none;
-	background-color: inherit;
-	color: white;
-	height: 100%;
-	padding: 5px;
-	font-size: 1.3em;
+.song-list-header > h1,button{
+	display: inline-block;
+	margin: 0;
+	padding: 10px;
+	vertical-align: middle;
 }
-.navbar button:hover{
-	background-color: white;
-	color: black;
+.modal-content {
+	padding: 20px;
 }
-.invisible {
-	position: static;
-	visibility: hidden;
-}
-.hidden {
-	display: none;
-}
-.active-tab {
-	background-color: white;
-	color: black;
-}
-.view-music-tab li{
-}
-*/

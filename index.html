@@ -9,176 +9,147 @@
 	<!-- LOCAL STYLES -->
 	<link rel="stylesheet" type="text/css" href="./styles/main.css">
 	<title>Music History</title>
-
-
 </head>
 
 <body>
-<div class="well">
-
-<!-- Top nav bar -->
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><img src="https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.lyngsat-logo.com%2Fhires%2Fpp%2Fphoenix_us.png&f=1" alt="Phoenix logo" width="30" height="30"></a>
+				<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-fire"></span></a>
     			</div> <!-- END NAVBAR HEADER>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<div class="collapse navbar-collapse" id="navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="profile-tab-btn"><a href="#">Profile</a></li>
-					<li class="active view-music-tab-btn"><a href="#">View Music<span class="sr-only">(current)</span></a></li>
-					<li class="add-music-tab-btn"><a href="#">Add Music</a></li>
+					<li class="view-music-tab-btn"><a href="#" role="button">View Music</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Login</a></li>
+					<li class="active profile-tab-btn"><a href="#" role="button">Profile</a></li>
+					<li><a href="#" role="button">Login</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div> <!-- END CONTAINER -->
-	</nav>		
+	</nav> <!-- END NAVBAR -->
 
-<!-- invisible navbar spacer 
-	<nav class="navbar invisible">
-		<button>View music</button>
-		<button>Add Music</button>
-		<button>Profile</button>
-	</nav>
--->
+	<div class="container">
+		<div class="row">
+				<div class="col-md-4 well"> <!-- LEFT SIDEBAR FILTER -->
+					<!-- artist dropdown menu -->
+					<p><label for="titles">Title:</label></p>
+					<input list="titles">
+						<datalist id="titles"></datalist>
 
+					<!-- album dropdown menu -->
+					<p><label for="artists">Artists:</label></p>
+					<input list="artists">
+						<datalist id="artists"></datalist>
 
-<!-- VIEW MUSIC TAB -->
-<!-- container to hold songs -->
-	<div class="view-music-tab">
-	<h1>Song List</h1>
-	<button class="add-new-song-btn">Add Song</button>
-	<div class="song-list"></div>
+					<!-- album dropdsown menu -->
+					<p><label for="albums">Album:</label></p>
+					<input list="albums">
+						<datalist id="albums"></datalist>					
 
-<!-- FILTER
-	<div class="filter">
-		<!-- song-length range bar
-		<p><label for ="song-length">Song length:</label></p>
-		<input class="widen" type="range" name="song-length">
-		
-		<!-- artist dropdown menu
-		<p><label for="artist">Artist:</label></p>
-		<select name ="artist">
-			<option value="arch-enemy">Arch Enemy</option>
-			<option value="limb-bizkit">Limb Bizkit</option>
-			<option value="kid-rock">Kid Rock</option>
-			<option value="tim-mcgraw">Tim McGraw</option>
-		</select>
+					<!-- genre check boxes -->
+					<p><label for="genres">Genre:</label></p>
+					<input list="genres">
+						<datalist id="genres"></datalist>					
+					
 
-		<!-- album dropdown menu
-		<p><label for="album">Album:</label></p>
-		<select name ="album">
-			<option value="dead-eyes-see-no-future">Dead Eyes See No Future</option>
-			<option value="three-dolla-bill-yall">Three Dolla Bill Y'all</option>
-			<option value="devil-without-a-cause">Devil Without A Cause</option>
-			<option value="not-a-moment-too-soon">Not A Moment Too Soon</option>
-		</select>
+					<!-- filter button -->
+					<p><button type="button" class="btn btn-default btn-block btn-filter">Filter</button></p>
+			</div> <!-- END SIDEBAR -->
 
-		<!-- genre check boxes
-		<p><label for="genre">Genre:</label></p>
-		<div class="checkboxes">
-			<div class="checkboxes-left">
-				<div><input type="checkbox" name="genre" value="blues"> Blues</div>
-				<div><input type="checkbox" name="genre" value="lassical"> Classical</div>
-				<div><input type="checkbox" name="genre" value="country">  Country</div>
-			</div>
-			<div class="checkboxes-right">
-				<div><input type="checkbox" name="genre" value="metal"> Metal</div>
-				<div><input type="checkbox" name="genre" value="pop"> Pop</div>
-				<div><input type="checkbox" name="genre" value="rock"> Rock</div>
-			</div>
-		</div>				
+			<div class="col-md-8 main"> <!-- MAIN CONTENT -->
+				
+				<!-- VIEW MUSIC TAB -->
+				<div class="view-music-tab">
+					<header class="song-list-header">
+						<h1>Song List</h1>
+									<!-- Small modal -->
+						<button type="button" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm">Add Song</button>
+					</header>
 
-		<!-- filter button
-		<p><button type="button" onclick="alert('Filtering results')">Filter</button></p>
--->
-	</div>
+					<!-- SONG LIST -->
+					<table>
+						<thead>
+							<tr>
+								<th class="tl-play"></th>
+								<th>Title</th>
+								<th>Artist</th>
+								<th>Album</th>
+								<th>Genre</th>
+								<th class="tl-time"></th>
+							</tr>
+						</thead>
+						<tbody class="playlist">
+							<script id="songlist" type="text/x-handlebars-template">
+							</script>
+						</tbody>
+					</table>
+				</div> <!-- END VIEW MUSIC TAB -->
 
 
-<!-- ADD MUSIC TAB -->
-	<div class="add-music-tab hidden">
-		<h1>Add new music</h1>
-		<table>
-		<tr>
-			<td>
-				<label for="title">Song Title: </label>
-			</td>
-			<td>
-				<input type="text" name="song-title" placeholder="Song title" autofocus><br>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<label for="artist">Artist Name: </label>
-			</td>
-			<td>
-				<input type="text" name="artist" placeholder="Artist name"><br>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<label for="album">Album Title: </label>
-			</td>
-			<td>
-				<input type="text" name="album" placeholder="Album"><br>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<label for="genre">Genre: </label>
-			</td>
-			<td>
-				<select name="genre">
-					<option value="default">Select genre...</option>
-					<option value="country">Country</option>
-					<option value="pop">Pop</option>
-					<option value="rock">Rock</option>
-					<option value="classical">Classical</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-		<td colspan="2">
-			<button class="add-song-btn">Add Song</button>
-		</td>
-		</tr>
-		</table>
-	</div>	
 
+				<!-- PROFILE TAB -->
+				<div class="profile-tab hidden">
+					<h1>User Profile</h1>
+					<button class="btn btn-default">LOGIN</button>
+					<button class="btn btn-default">Create New User</button>
+				</div> <!-- END PROFILE-TAB -->
 
-<!-- PROFILE TAB -->
-	<div class="profile-tab hidden">
-		<h1>User Profile</h1>
-		<button>LOGIN</button>
-		<button>Create New User</button>
-	</div>
-</div> <!-- END .site-wrapper -->
+				<!-- ADD MUSIC MODAL -->
+				<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+					<div class="modal-dialog modal-sm">
+						<div class="modal-content">
+							<h1>Add new music</h1>
+								<table>
+									<tbody>
+										<tr>
+											<td><label for="title">Song Title: </label></td>
+											<td><input type="text" name="song-title" placeholder="Song title" autofocus></td>
+										</tr>
+										<tr>
+											<td><label for="artist">Artist Name: </label></td>
+											<td><input type="text" name="artist" placeholder="Artist name"></td>
+										</tr>
+										<tr>
+											<td><label for="album">Album Title: </label></td>
+											<td><input type="text" name="album" placeholder="Album"></td>
+										</tr>
+										<tr>
+											<td><label for="genre">Genre: </label></td>
+											<td>
+												<select name="genre">
+													<option value="default">Select genre...</option>
+													<option value="country">Country</option>
+													<option value="pop">Pop</option>
+													<option value="rock">Rock</option>
+													<option value="classical">Classical</option>
+												</select>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary btn-add-song">Add</button>
+							</div> <!-- END MODAL-FOOTER -->
+						</div> <!-- END MODAL-CONTENT -->
+					</div> <!-- END MODAL-DIALOG -->
+				</div> <!-- END MODAL -->
+			</div> <!-- END MAIN CONTENT -->	
+		</div> <!-- END ROW -->
+	</div> <!-- END CONTAINER -->
 
-<!-- FIREBASE API -->
-	<script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
-<!-- JQUERY API -->
-	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<!-- BOOTSTRAP -->
-	<script src="./lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- site scripts 
-	<script src="ajax.js"></script>
--->
-	<script src="js/musichistory.js"></script>
-	<script src="js/dispViewMusic.js"></script>
-	<script src="js/dispAddMusic.js"></script>
-	<script src="js/dispProfile.js"></script>
-	<script src="js/refreshLibrary.js"></script>
-	<script src="js/storeNewSong.js"></script>
-	<script src="js/resetSongInput.js"></script>
+<!-- REQUIREJS -->
+	<script data-main="./js/app.js" src="../lib/bower_components/requirejs/require.js"></script>
 </body>
 </html>
