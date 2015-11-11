@@ -10,7 +10,6 @@ requirejs.config({
 		firebase: "../lib/bower_components/firebase/firebase",
 		bootstrap: "../lib/bower_components/bootstrap/dist/js/bootstrap.min",
 		jquery: "../lib/bower_components/jquery/dist/jquery.min",
-		handlebars: "../lib/bower_components/handlebars/handlebars",
 		hbs: "../lib/bower_components/require-handlebars-plugin/hbs"
 	},
 	shim: {
@@ -24,11 +23,6 @@ requirejs.config({
 });
 
 // Start the main app logic.
-requirejs ( ["bootstrap","navigation"],
-function (bootstrap,navigation) {
-
-
-
-    
-
+requirejs ( ["bootstrap","main"],
+function (bootstrap,main) {
 }); // END REQUIREJS
