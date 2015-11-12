@@ -17,7 +17,9 @@ define(["jquery","firebase","dispViewMusic","dispProfile","addSong","removeSong"
 		$(".btn-add-song").click(function(event) {addSong(event);});
 		
 		// Handler to remove song
-		$("body").click(function(event) {removeSong(event);});
+		$("body").on("click", ".glyphicon-remove", function(event) {
+			removeSong(event);
+		});
 
 		// Handler to filter song
 		$(".btn-filter").click(function(event) {songFilter(event);});
