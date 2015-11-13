@@ -23,5 +23,8 @@ define(["jquery","firebase","dispViewMusic","dispProfile","addSong","removeSong"
 
 		// Handler to filter song
 		$(".btn-filter").click(function(event) {songFilter(event);});
+
+		// Searchbar
+		$(".search").keyup(function(event) {songFilter(event);});
 	}
 );

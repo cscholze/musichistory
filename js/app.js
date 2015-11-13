@@ -10,7 +10,8 @@ requirejs.config({
 		firebase: "../lib/bower_components/firebase/firebase",
 		bootstrap: "../lib/bower_components/bootstrap/dist/js/bootstrap.min",
 		jquery: "../lib/bower_components/jquery/dist/jquery.min",
-		hbs: "../lib/bower_components/require-handlebars-plugin/hbs"
+		hbs: "../lib/bower_components/require-handlebars-plugin/hbs",
+		q: "..lib//bower_components/q/q"
 	},
 	shim: {
 		"bootstrap": {
