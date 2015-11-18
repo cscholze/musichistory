@@ -3,7 +3,7 @@ define(["jquery","firebase"], function($,Firebase) {
 		getSnapshot: function() {
 			var def = $.Deferred();
 			var libraryRef = new Firebase("https://jcs-musichistory.firebaseio.com/library/");
-			libraryRef.on("value", function(snapshot) {
+			libraryRef.once("value", function(snapshot) {
 				def.resolve(snapshot.val());
 			});
 			return def.promise();
