@@ -1,18 +1,15 @@
-	var app = angular.module("MusicHistoryApp", ['ngRoute','firebase']);
+(function() {
+	var app = angular.module("MusicHistoryApp", ['firebase','']);
 
-	app.config(['$routeProvider',
-	  function($routeProvider) {
-	    $routeProvider
-	      .when('/songs-list', {
-	        templateUrl: 'partials/song-list.html',
-	        controller: 'SongsCtrl'
-	      })
-	      .when('/profile', {
-	      	templateUrl: 'partials/profile.html',
-	      	controller: ""
-	      })
-	      .otherwise({
-	      	redirectTo: '/navigation'
-	      });
-	  }]);
+app.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/songs/list', {
+        templateUrl: 'partials/song-list.html',
+        controller: 'SongCtrl'
+      }).
+      otherwise('/playlist');
+  }]);
 
+
+})();

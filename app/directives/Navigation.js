@@ -4,7 +4,7 @@ app.directive("navigation", function() {
 		templateUrl: "./partials/Navigation.html",
 		transclude: true,
 		controller: function() {
-			this.tab = 1;
+			this.tab;
 
 			this.isSet = function(checkTab) {
 				return this.tab === checkTab;

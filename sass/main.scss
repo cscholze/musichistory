@@ -11,31 +11,15 @@ body {
 filter {
 	width: 80px;
 }
-.main {
+.body {
 	color: #ddd;
 }
 table {
 	width: 100%;
-}
-.checkboxes-left {
-	float: left;
-	margin-left: 10px;
-	margin-right: 20px;
-}
-.checkboxes-right {
-	float: left;
-}
-.view-music-tab, .profile-tab{
-	background-color: black;
-	padding: 10px;
-	border-radius: 5px;
 }
 .song-list-header > h1,button{
 	display: inline-block;
 	margin: 0;
 	padding: 10px;
 	vertical-align: middle;
-}
-.modal-content {
-	padding: 20px;
 }

@@ -12,8 +12,12 @@
 <body ng-app="MusicHistoryApp">
 
 	<navigation></navigation>
-	
-	<div ng-view></div>
+
+	<div class="container">
+		<div class="row">	
+			<div ng-view class="col-lg-8"></div>
+		</div>
+	</div>
 
 	<!-- ANGULAR -->
 	<script src="./lib/bower_components/angular/angular.min.js"></script>
@@ -24,6 +28,6 @@
 	<script src="./app/app.js"></script>
 	<script src="./app/directives/Navigation.js"></script>
 	<script src="./app/controllers/SongsCtrl.js"></script>
-
+	<script src="./app/controllers/AddMusicCtrl.js"></script>
 </body>
 </html>
